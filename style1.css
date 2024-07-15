@@ -1,153 +1,143 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@400&display=swap");
+
 * {
-  font-family: "Oxanium", sans-serif;
-  padding: 0;
+  box-sizing: border-box;
   margin: 0;
-  padding: 7px 0px;
+  padding: 0;
 }
 
-body{
-    background-color: #f7f7f7;
+body {
+  font-family: "Oxanium", sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: black;
-    color: white;
-    margin-top: -21px;
-  }
+header {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+}
 
-  .logo img {
-    margin-left: 8px;
-    width: 25px;
-    filter: invert(1);
-  }
-  
-  .logo span {
-    position: relative;
-    bottom: 10px;
-  }
+.logo {
+  display: flex;
+  align-items: center;
+}
 
-  ul li a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  ul {
-    display: flex;
-  }
-  
-  ul li {
-    list-style: none;
-    padding: 0 13px;
-  }
-  
-  ul > li > a:hover {
-    color: rgb(200, 200, 201);
-  }
+nav{
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+
+.logo img {
+  width: 25px;
+  margin-right: 8px;
+  filter: invert(1);
+}
+
+.logo span {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav ul {
+  margin-top: 3px;
+  display: flex;
+  list-style-type: none;
+  margin-right: 5px;
+}
+
+nav ul li {
+  padding:  10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li a:hover {
+  color: #c8c8c9;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 .information {
-    border: 0px solid black;
-    /* width: 37vw; */
-    background-color: #f7f7f7; /* Light gray background */
-    padding: 20px; /* Padding for spacing */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 125px;
-    margin-right: 50px;
-    overflow-y: scroll;
-  }
-  
-  .information ::-webkit-scrollbar {
-    width: 0;
-  }
-  
-  .information {
-    scrollbar-width: none;
-  }
-  .information1 {
-    border: none;
-    width: 100%; /* Adjust width as needed */
-    background-color: #f7f7f7; /* Light gray background */
-    padding: 20px; /* Padding for spacing */
-     /* Center the table */
-  }
-  
-  table {
-    width: 100%; /* Full width of the container */
-    border-collapse: collapse; /* Collapse borders between cells */
-    margin-bottom: 20px; /* Space between the table and other content */
-  }
-  
-  th,
-  td {
-    border: 1px solid #ddd; /* Border style */
-    padding: 8px; /* Padding inside cells */
-    text-align: left; /* Align text to the left */
-  }
-  
-  th {
-    background-color: #f2f2f2; /* Light gray background for header */
-    font-weight: bold; /* Bold font for headers */
-  }
-  
-  .heading {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: black;
-    font-weight: bolder;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+@media only screen and (max-width: 768px) {
+
+  header {
+    padding: 8px 12px;
   }
 
-  footer {
-    background-color: black;
-    color: white;
-    display: flex;
-    padding: 12px;
-    justify-content: center;
+  nav {
+    padding-top: 0px;
+    flex-direction: column;
     align-items: center;
+    height: 80px; 
   }
-  
 
-  @media only screen and (max-width: 600px) {
-    nav {
-        flex-direction: column;
-      }
-    
-      .logo {
-        padding: 6px 0;
-      }
-    
-      .logo span {
-        font-size: 20px;
-      }
-      .logo img {
-        width: 15px;
-        filter: invert(1);
-      }
-    
-    
-    .information {
-        position: static; /* Remove absolute positioning */
-        width: 85%; /* Adjust width for full width on smaller screens */
-        margin: 20px auto; /* Center and add space around */
-    }
-    
-    
-    /* Hide scrollbar for WebKit browsers */
-    .information::-webkit-scrollbar {
-    width: 0; /* Remove scrollbar width */
-    }
-    
-    /* Optional: Hide scrollbar for Firefox */
-    .information {
-    scrollbar-width: none;
-    }
-
-
+  ul {
+    padding: 10px 0; 
   }
+
+  nav ul li {
+    padding: 8px 10px; 
+    text-align: center;
+  }
+  .logo {
+    padding: 6px 0;
+  }
+
+  .logo span {
+    font-size: 20px;
+  }
+  .logo img {
+    width: 15px;
+    filter: invert(1);
+  }
+
+  .information {
+    margin: 10px;
+  }
+}
