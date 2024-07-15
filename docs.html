@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="email.svg" alt="Email.svg" />
+          <span>E-Validate</span>
+        </div>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="docs.html">Docs</a></li>
+          <li><a href="#">Contact us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="information">
+      <span class="heading">State / Reason</span>
+      <br />
+      <span class="description"
+        >This is the main indicator for deliverability of email addresses. The
+        state is the deliverability and the reason is the reason why it is in
+        this state.</span
+      >
+      <br />
+      <br />
+      <span class="heading">Possible States/Reason</span>
+      <br />
+      <span class="description">
+        <span></span>
+      </span>
+      <div class="information1">
+        <table>
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>deliverable</td>
+              <td>The email address can receive emails</td>
+            </tr>
+            <tr>
+              <td>Undeliverable</td>
+              <td>The email address can not receive emails</td>
+            </tr>
+            <tr>
+              <td>risky</td>
+              <td>
+                The email address can possible receive emails but it is not
+                certain if they are read my a person or actually really received
+              </td>
+            </tr>
+            <tr>
+              <td>unknown</td>
+              <td>
+                We can not check the email address if it is able to receive
+                emails
+              </td>
+            </tr>
+            <!-- Add more rows as needed -->
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
+              <th>reason</th>
+              <th>resulting state</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>valid_mailbox</td>
+              <td>deliverable</td>
+              <td>
+                The email address has avalid mailbox behind and is able to
+                receive emails
+              </td>
+            </tr>
+            <tr>
+              <td>invalid_mx</td>
+              <td>undeliverable</td>
+              <td>
+                The MX entries stored in the domains DNS either do not exist or
+                not valid
+              </td>
+            </tr>
+            <tr>
+              <td>invaild_format</td>
+              <td>undeliverable</td>
+              <td>The format of the email address is not valid</td>
+            </tr>
+            <tr>
+              <td>invalid_smtp</td>
+              <td>undeliverable</td>
+              <td>The SMTP server did not respond correctly</td>
+            </tr>
+            <tr>
+              <td>invalid_mailbox</td>
+              <td>undeliverable</td>
+              <td>The email address was refused by the SMTP server</td>
+            </tr>
+            <tr>
+              <td>low_deliverability</td>
+              <td>risky</td>
+              <td>
+                Indicates that the possibility that a person reads the email is
+                low
+              </td>
+            </tr>
+            <tr>
+              <td>low_quality</td>
+              <td>risky</td>
+              <td>
+                Indicates that the email address is used by multiple people
+              </td>
+            </tr>
+            <tr>
+              <td>no_connect</td>
+              <td>unknown</td>
+              <td>We could not connect to the SMTP server</td>
+            </tr>
+            <tr>
+              <td>unexpected_error</td>
+              <td>unknown</td>
+              <td>An unexpected error occured</td>
+            </tr>
+            <tr>
+              <td>timeout</td>
+              <td>unknown</td>
+              <td>The connection to the SMTP server timed out</td>
+            </tr>
+            <tr>
+              <td>unavailable_smtp</td>
+              <td>unknown</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <span class="heading">User / Tag / Domain</span>
+        <br />
+        <span class="description"
+          >These fields provide you with a simple way to look at the singular
+          parts of an email address</span
+        >
+        <br /><br />
+        <span class="heading">MX Check</span>
+        <br />
+        <span class="description"
+          >The Simple Mail Transfer Protocol (SMTP), which is the very same
+          protocol we all use to move emails on and across networks, is used by
+          the emailvalidation.io API to verify email addresses.<br /><br />
+          By determining whether the requested domain is set up to accept email,
+          our system starts the process of real-time email verification. Here is
+          where the MX-Records check in the API is useful. The mx found response
+          object of the API will inform you if MX-Records for the specified
+          domain have been located.</span
+        >
+        <br /><br />
+        <span class="heading">"Did you mean" Check</span>
+        <br />
+        <span class="description"
+          >In the "did you mean" object of the API result set, the
+          emailvalidation.io API will propose a different email address if a
+          potential misspelling or mistake in the requested email address's
+          domain portion is identified.<br /><br />
+          Please be aware that the email address in the did you mean object is
+          just a recommendation and has no bearing on the other API response
+          objects.</span
+        >
+        <br /><br />
+        <span class="heading">Catch-All Detection</span>
+        <br />
+        <span class="description"
+          >One SMTP check is not the end of the real-time verification procedure
+          used by the emailvalidation.io API. A catch-all detection mechanism
+          has been created since many email servers are set up to catch (accept)
+          all incoming mail traffic, independent of the local component of the
+          requested email address.<br /><br />
+          This functionality is disabled by default due to the significant
+          negative impact it has on the API's response time. However, you can
+          enable catch-all detection by adding the request URL's catch all
+          option and setting it to</span
+        >
+        <br /><br />
+        <span class="description"
+          >Depending on whether the requested email address is discovered to be
+          a part of a catch-all mailbox, the catch all JSON object in the API
+          response will either return true or false.</span
+        ><br /><br />
+        <br /><br />
+        <span class="heading">Disposable Check</span>
+        <br />
+        <span class="description"
+          >If the requested email address is discovered to be utilizing a
+          disposable email service like mailinator.com or trashmail.com, the API
+          will also return a disposable JSON object with the values true or
+          false.</span
+        >
+        <br /><br />
+        <span class="heading">Free Email Provider Check</span>
+        <br />
+        <span class="description"
+          >The emailvalidation.io API can recognize free email services like
+          Gmail, GMX or Yahoo since it is connected to a regularly updated
+          database that lists all available email providers. <br /><br />
+          The free JSON object in the API response will either return true or
+          false depending on whether the given email address is discovered to be
+          utilizing a free service.</span
+        >
+        <br /><br />
+        <span class="heading">Role Check</span>
+        <br />
+        <span class="description"
+          >Determining whether the requested email address is a role email
+          address is another step in the emailvalidation.io email verification
+          procedure. A role email is an address that often refers to a function
+          rather than a person or name (for example, "support" or "postmaster").
+          Due to the low open rates of this sort of email address, it could
+          occasionally be undesirable when sending email campaigns. <br /><br />
+          Example: If the requested email is a role address, the role JSON
+          object in the API response will return true; otherwise, it will return
+          false.</span
+        >
+        <br /><br />
+        <span class="heading">Quality Score</span>
+        <br />
+        <span class="description"
+          >The API will return a numeric Quality Score ranging from 0 (Bad) to 1
+          (Good), reflecting the quality and deliverability of the given email
+          address, to complete the emailvalidation.io validation & verification
+          procedure. <br /><br />
+          Based on a system that gets smarter with each email address validated,
+          this Quality Score is determined for each requested email
+          address.</span
+        >
+      </div>
+    </div>
+    <footer>All rights reserved | E-Validte | Copyright @2024</footer>
+  </body>
+</html>
