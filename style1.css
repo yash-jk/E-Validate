@@ -80,6 +80,10 @@ main {
   margin: 20px;
 }
 
+.heading{
+  font-weight: bolder;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
