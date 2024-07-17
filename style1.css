@@ -137,6 +137,15 @@ footer {
     filter: invert(1);
   }
 
+  table {
+    font-size: 14px;
+  }
+
+  th, td {
+    padding: 4px;
+  }
+
+  
   .information {
     margin: 10px;
   }
